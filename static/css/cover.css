@@ -1,0 +1,98 @@
+a, a:focus, a:hover {
+  color:#FFFFFF;
+}
+.btn-default, .btn-default:hover, .btn-default:focus {
+  background-color:#FFFFFF;
+  border:1px solid #FFFFFF;
+  color:#333333;
+  text-shadow:none;
+}
+
+html, body {
+  background-color:#333333;
+  height:100%;
+}
+body {
+  color:#FFFFFF;
+  text-align:center;
+  text-shadow:rgba(0, 0, 0, 0.498039) 0 1px 3px;
+}
+.site-wrapper {
+  box-shadow:rgba(0, 0, 0, 0.498039) 0 0 100px inset;
+  display:table;
+  height:100%;
+  min-height:100%;
+  width:100%;
+}
+.site-wrapper-inner {
+  display:table-cell;
+  vertical-align:top;
+}
+.cover-container {
+  margin-left:auto;
+  margin-right:auto;
+}
+.inner {
+  padding:30px;
+}
+.masthead-brand {
+  margin-bottom:10px;
+  margin-top:10px;
+}
+.masthead-nav > li {
+  display:inline-block;
+}
+.masthead-nav > li + li {
+  margin-left:20px;
+}
+.masthead-nav > li > a {
+  border-bottom-color:transparent;
+  border-bottom-style:solid;
+  border-bottom-width:2px;
+  color:rgba(255, 255, 255, 0.74902);
+  font-size:16px;
+  font-weight:bold;
+  padding-left:0;
+  padding-right:0;
+}
+.masthead-nav > li > a:hover, .masthead-nav > li > a:focus {
+  background-color:transparent;
+  border-bottom-color:rgba(255, 255, 255, 0.247059);
+}
+.masthead-nav > .active > a, .masthead-nav > .active > a:hover, .masthead-nav > .active > a:focus {
+  border-bottom-color:#FFFFFF;
+  color:#FFFFFF;
+}
+.masthead-brand {
+  float:left;
+}
+.masthead-nav {
+  float:right;
+}
+.cover {
+  padding:0 20px;
+}
+.cover .btn-lg {
+  font-weight:bold;
+  padding:10px 20px;
+}
+.mastfoot {
+  color:rgba(255, 255, 255, 0.498039);
+}
+.masthead {
+  position:fixed;
+  top:0;
+}
+.mastfoot {
+  bottom:0;
+  position:fixed;
+}
+.site-wrapper-inner {
+  vertical-align:middle;
+}
+.masthead, .mastfoot, .cover-container {
+  width:100%;
+}
+.masthead, .mastfoot, .cover-container {
+  width:700px;
+}
