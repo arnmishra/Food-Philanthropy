@@ -76,14 +76,14 @@ def order(postmate):
 if __name__ == '__main__':
 
     try:
-        os.environ["POSTMATES_KEY"] = "a254dd7a-a9ba-4e30-9adf-7e72781caba3" #TAKE OUT
+        os.environ["POSTMATES_KEY"] = "REDACTED" #TAKE OUT
         API_KEY = os.environ["POSTMATES_KEY"]
     except KeyError:
         print(Fore.RED + "Please set the Postmates API Key to the environment variable POSTMATES_KEY" + Fore.RESET)
         sys.exit(1)
 
     try:
-        os.environ["POSTMATES_ID"] = "cus_KUqGApvB2kLJsF" #TAKE OUT
+        os.environ["POSTMATES_ID"] = "REDACTED" #TAKE OUT
         CUSTOMER_ID = os.environ["POSTMATES_ID"]
     except KeyError:
         print(Fore.RED + "Please set the Postmates Customer ID environment variable POSTMATES_ID" + Fore.RESET)
