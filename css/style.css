@@ -2,8 +2,32 @@ body, html {
 	margin: 0;
 	padding: 0;
 }
+
 #map {
-	width: 800px;
-	height: 500px;
+	width: 55%;
+	height: 350px;
 	margin: 0 auto;
+/*	margin-right: 325px;*/
+}
+
+.rand
+{
+	width: 45%;
+	height: 350px;
+	margin: 0 auto;
+}
+
+h3.rand
+{
+/*	margin-left: 50% + 25px;*/
+}
+
+.form-horizontal
+{
+	margin-left:25px;
+}
+
+.control-label
+{
+/*	margin-left: 25px;*/
 }

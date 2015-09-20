@@ -65,7 +65,7 @@
             <h1>Food Philanthropy</h1>
             <h3>Altruistic food delivery</h3>
             <br>
-            <a href="#about" class="btn btn-dark btn-lg">Find areas near you</a>
+            <a href="#services" class="btn btn-dark btn-lg">Find areas near you</a>
         </div>
     </header>
 
@@ -89,10 +89,51 @@
         <div class="container">
             <div class="row text-center">
                 <div class="col-lg-10 col-lg-offset-1">
-                    <h2>Our Services</h2>
-                    <div id = "map"></div>
-                    <hr class="small">
+                    
+                    	<div style="float:left;" id = "map"></div>
+						<div style="float:right;" class = "rand">
+							
+							<h3>Place an order</h3>
+							<form class="form-horizontal" role="form">
+
+							  <div class="form-group">
+							    <label class="control-label col-sm-2" for="email">Company Name:</label>
+							    <div class="col-sm-10">
+							      <input type="email" class="form-control" id="email" placeholder="Enter company name" size="20"><br>
+							    </div>
+							  </div>
+
+							  <div class="form-group">
+							    <label class="control-label col-sm-2" for="text">Phone Number:</label>
+							    <div class="col-sm-10"> 
+							      <input type="tel" class="form-control" id="phone" placeholder="Enter company phone number" size = "20"><br>
+							    </div>
+							  </div>
+
+							  <div class="form-group">
+							    <label class="control-label col-sm-2" for="text">Description of Item(s):</label>
+							    <div class="col-sm-10"> 
+							      <input type="itemsdescr" class="form-control" id="pwd" placeholder="Enter description of item(s)" size = "20"><br>
+							    </div>
+							  </div>
+
+							  <div class="form-group"> 
+							    <div class="col-sm-offset-2 col-sm-10">
+							      <button type="submit" class="btn btn-default">Place Order</button>
+							    </div>
+							  </div>
+
+							</form>
+							
+							
+							
+						</div>
+						
+              <!--  <hr class="small"> -->
+					
                     <div class="row">
+						<hr class="small">
+						<h2>Our Services</h2>
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
@@ -129,7 +170,7 @@
                                     <strong>Donate Food</strong>
                                 </h4>
                                 <p>Donate any food to local charities near you. Have it delivered within minutes.</p>
-                                <a href="#" class="btn btn-light">Place Order</a>
+                                <a href="order.html" class="btn btn-light">Place Order</a>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -139,7 +180,7 @@
                                 <i class="fa fa-car fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>Service Name</strong>
+                                    <strong>Delivery</strong>
                                 </h4>
                                 <p>Postmates' efficient service will deliver your goods to your desired charity.</p>
                                 <a href="#" class="btn btn-light">Postmates</a>
