@@ -17,9 +17,15 @@ body, html {
 	margin: 0 auto;
 }
 
-h3.rand
+/*h3.rand
 {
-/*	margin-left: 50% + 25px;*/
+	margin-left:60%;
+	float: none;
+}*/
+
+button.rand
+{
+	float: none;
 }
 
 .form-horizontal
@@ -30,4 +36,10 @@ h3.rand
 .control-label
 {
 /*	margin-left: 25px;*/
+}
+
+.form-control
+{
+	margin-left:5%;
+	width: 90%;
 }
