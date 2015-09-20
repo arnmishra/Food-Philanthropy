@@ -7,7 +7,7 @@ function Map_create() {
 
     var mapOptions = {
           center: abc,
-          zoom: 15,
+          zoom: 10,
     }
     var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
@@ -28,8 +28,12 @@ function Map_create() {
             map.setCenter(pos);
 
 /* ~~~~~~~~~~~~~~~~~  ON CLICK OF BUTTON ~~~~~~~~~~~~~~~~~~~~~~~~ */
-            deliver = new google.maps.places.PlacesService(map);
-            map.addListener('idle', performSearch);
+            
+            //$("#searchButton").click(function(){    
+                deliver = new google.maps.places.PlacesService(map);
+                map.addListener('idle', performSearch);
+           // });
+            
 
         });//getCurrentPosition
 
@@ -39,7 +43,7 @@ function Map_create() {
         function performSearch() {
             var request = {
                 bounds: map.getBounds(),
-                keyword: 'library'
+                keyword: 'food pantry'
             }
             deliver.radarSearch(request, callback);
         }
@@ -75,9 +79,11 @@ function Map_create() {
                         console.error(status);
                             return;
                         }
-                    data.setContent(result.name);
+                        
+                    data.setContent(result.name + "<br>" + result.formatted_address );
                     data.open(map,marker);
-      
+                    $("#outputname").text(result.name);
+                    $("#outputaddress").text(result.formatted_address);
               });
             });
          }
