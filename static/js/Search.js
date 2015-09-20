@@ -24,7 +24,6 @@ function Map_create() {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
             }
-
             locationBlock.setPosition(pos);
             locationBlock.setContent('You are Here!'); //need to make text black
             map.setCenter(pos);
@@ -33,7 +32,7 @@ function Map_create() {
             
                 deliver = new google.maps.places.PlacesService(map);
                 map.addListener('idle', performSearch);
-
+                
         });//getCurrentPosition
 
 
@@ -86,14 +85,16 @@ function Map_create() {
          }
       }  
 } //Map_create() end!
-$(function () {
+function test() {
     $("#placeOrder").click(function(){
-        $("form").append("<input type='hidden' name='test' value='testing'>");
-        $("form").append("<input type='hidden' name='test' value='testing'>");
-        $("form").append("<input type='hidden' name='test' value='testing'>");
-        $("form").append("<input type='hidden' name='test' value='testing'>");
+        var outputaddress = $("#outputaddress").text();
+        var outputname = $("#outputname").text();
+        console.log(test);
+        $("form").append("<input type='hidden' name='end_address' value=outputaddress>");
+        $("form").append("<input type='hidden' name='end_name' value=ouputname>");
+        $("form").append("<input type='hidden' name='start_address' value='77 Massachusetts Ave, Cambridge, MA 02139'>");
     });
-});
+};
 
 
            
