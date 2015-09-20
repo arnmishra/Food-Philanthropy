@@ -24,22 +24,35 @@
 		<strong>Delivery Address: </strong> 101 Market Street
 	</p>
 	<p>
-		<strong>Time Submitted:</strong> December 9th, 2014 19:31:22Z
-	</p>	
+		<strong>Time Submitted:</strong>
+	</p>
+	<p id = "time">
+	</p>
+	<p>
+		<strong>Estimated Delivery Time:</strong>
+	</p>
+	<p id = "end">
+	</p>
+	<script>
+	var d = new Date();
+	document.getElementById("time").innerHTML = d.toString();
+	
+	var end = new Date(d.getTime() + 2400000);
+	document.getElementById("end").innerHTML = end.toString();
+	
+	</script>	
+	
 	<p>
 		<strong>Items Requested:</strong>
-		<li>1 Stuffed Puppy</li>
-		<li>6 pairs of socks</li>
+		<li>50 Bagels</li>
+		<li>6 Dozen Donuts
+		<li>10 Tubs of Cream Cheese</li>
+		<li>5 Bottles of Orange Juice</li>
 	</p>
 	<p>
-		<strong>Price:</strong> $14.99
+		<strong>Special Instructions:</strong> Just come inside, give us order #115
 	</p>
-	<p>
-		<strong>Special Instructions:</strong> Just come inside, give us order #123
-	</p>
-	<p>
-		<strong>Estimated Delivery Time:</strong> December 9th, 2014 20:31:00Z
-	</p>
+	
 	<p>
 		<strong>Delivery Phone Number:</strong> 415-555-5555
 	</p>
