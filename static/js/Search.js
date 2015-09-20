@@ -1,12 +1,12 @@
 function Map_create() {
-    
+
     var deliver;
     var data;
 
-    var abc = new google.maps.LatLng(42,71);
+    var loc1 = new google.maps.LatLng(42,71);
 
     var mapOptions = {
-          center: abc,
+          center: loc1,
           zoom: 10,
     }
     var map = new google.maps.Map(document.getElementById("map"), mapOptions);
