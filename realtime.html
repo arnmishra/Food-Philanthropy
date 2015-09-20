@@ -18,11 +18,14 @@
 <body>
 	<h3>Shipment Information</h3>
 	<p>
-		<strong>Name:</strong> Alice Customer
-	</p>
+		<strong>Name:</strong>
+	</p><p>Alice Customer</p>
 	<p>
-		<strong>Delivery Address: </strong> 101 Market Street
+		<strong>Delivery Address: </strong>
 	</p>
+		<p id = "address">121 Amherst Street</p>
+		<p>Cambridge, MA 02139</p>
+	
 	<p>
 		<strong>Time Submitted:</strong>
 	</p>
@@ -50,12 +53,12 @@
 		<li>5 Bottles of Orange Juice</li>
 	</p>
 	<p>
-		<strong>Special Instructions:</strong> Just come inside, give us order #115
-	</p>
+		<strong>Special Instructions:</strong>
+	</p><p>Just come inside, give us order #115</p>
 	
 	<p>
-		<strong>Delivery Phone Number:</strong> 415-555-5555
-	</p>
+		<strong>Delivery Phone Number:</strong>
+	</p><p>415-555-5555</p>
 	<h3>Delivery Map</h3>
 	<div class = "jumbotron">
 		<style>
@@ -68,6 +71,15 @@
 		}
 		</style>
 	</div>
+
+	<div id = "map">
+	<div>
+
+	<script src = "static/js/Search.js"></script>
+	
+	<script src="https://maps.googleapis.com/maps/api/js?callback=Map_create&amp;sensor=true&amp;libraries=places,geometry"type = 'text/javascript' async defer>
+	</script>
+
 	
 </body>
 </html>
