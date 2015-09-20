@@ -1,11 +1,14 @@
 function Map_create() {
-    //Creating new google.maps.Map object (google.maps.Map(mapDiv, options))
+
     var deliver;
     var data;
-    var abc = new google.maps.LatLng(20.68177501, -103.3514794);
+
+
+    var loc1 = new google.maps.LatLng(42,71);
+
 
     var mapOptions = {
-          center: abc,
+          center: loc1,
           zoom: 10,
     }
     var map = new google.maps.Map(document.getElementById("map"), mapOptions);
@@ -28,14 +31,10 @@ function Map_create() {
 
 /* ~~~~~~~~~~~~~~~~~  ON CLICK OF BUTTON ~~~~~~~~~~~~~~~~~~~~~~~~ */
             
-            //$("#searchButton").click(function(){    
                 deliver = new google.maps.places.PlacesService(map);
                 map.addListener('idle', performSearch);
-           // });
-            
 
         });//getCurrentPosition
-
 
 
 /* ~~~~~~~~~~~~~~~~~~~~ PERFORM THE QUERY ~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -47,7 +46,6 @@ function Map_create() {
             deliver.radarSearch(request, callback);
         }
 
-
 /* ~~~~~~~~~~~~~~~~~~~~~~ ADD MARKERS TO MAP OF QUERY ~~~~~~~~~~~~~~~~~ */ 
         function callback(results, status) {
             if (status !== google.maps.places.PlacesServiceStatus.OK) {
@@ -58,7 +56,6 @@ function Map_create() {
               addMarker(result);
             }
         }
-
 
 /* ~~~~~~~~~~~~~~~~~~~~~ ACTUALLY ADD MARKERS ~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
         function addMarker(place) {
@@ -88,32 +85,13 @@ function Map_create() {
             });
          }
       }  
-
-
-        
-
-
 } //Map_create() end!
-/* ~~~~~~~~~ API ~~~~~~~~~~~~~~ */
-function delivery () {
-    $.ajax({
-        url: "https://api.postmates.com/v1/customers/cus_KUqGApvB2kLJsF/delivery_quotes",
-        headers: {
-            "Authorization" : "Basic a254dd7a-a9ba-4e30-9adf-7e72781caba3"
-        },
-        success: test
-    });
-}
-
-function test (data) {
-    alert("reached");
-}
-
 $(function () {
     $("#placeOrder").click(function(){
         debugger;
         $("form").append("<input type='hidden' value='testing'>");
     });
 });
+
 
            

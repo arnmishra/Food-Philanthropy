@@ -39,22 +39,19 @@
         <ul class="sidebar-nav">
             <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
             <li class="sidebar-brand">
-                <a href="#top"  onclick = $("#menu-close").click(); >Start Bootstrap</a>
+                <a href="#top"  onclick = $("#menu-close").click(); >Menu</a>
             </li>
             <li>
                 <a href="#top" onclick = $("#menu-close").click(); >Home</a>
             </li>
             <li>
-                <a href="#about" onclick = $("#menu-close").click(); >About</a>
+                <a href="#about" onclick = $("#menu-close").click(); >Services</a>
             </li>
             <li>
-                <a href="#services" onclick = $("#menu-close").click(); >Services</a>
+                <a href="#services" onclick = $("#menu-close").click(); >Place an Order</a>
             </li>
             <li>
-                <a href="#portfolio" onclick = $("#menu-close").click(); >Portfolio</a>
-            </li>
-            <li>
-                <a href="#contact" onclick = $("#menu-close").click(); >Contact</a>
+                <a href="#contact" onclick = $("#menu-close").click(); >Contact Us</a>
             </li>
         </ul>
     </nav>
@@ -74,7 +71,7 @@
         <div class="container">
             <div class="row">
                 <hr class="small">
-                        <h2 class = "ourservices">Our Services</h2>
+                        <center><h2 class = "ourservices">Our Services</h2></center>
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <center><span class="fa-stack fa-4x">
@@ -146,7 +143,7 @@
                     
                     	<div style="float:left;" id = "map"></div>
 						<div style="float:right;" class = "rand">
-							<form class="form-horizontal" role="form"  method="post">
+							<form class="form-horizontal" role="form"  method="POST" action="realtime.html">
 								<center><h3>Place an Order</h3></center>
 
 							  <div class="form-group">
@@ -160,8 +157,7 @@
                    
 							    <label for="text">Description of Item(s):</label>
 							      <input type="itemsdescr" class="form-control" id="pwd" placeholder="Enter description of item(s)" size = "20"><br>
-							
-							 		<button type="button" class="btn btn-default" id = "searchButton">Search</button>
+
 							      <button type="submit" class="btn btn-default" id = "placeOrder">Place Order</button>
 								  
 						  
@@ -322,6 +318,7 @@
 -->
     <!-- Footer -->
     <footer>
+		<section id = "contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
@@ -350,6 +347,7 @@
                 </div>
             </div>
         </div>
+		</section>
     </footer>
 
     <!-- jQuery -->
