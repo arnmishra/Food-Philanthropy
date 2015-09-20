@@ -1,6 +1,6 @@
 # Food Philanthropy
 
-According to the *National Geographic*, about 30% of the food we grow is wasted every year. However, with constant advent of new technology, newfound solutions have begun to offer solutions.
+According to the *National Geographic*, about 30% of the food we grow is wasted every year. However, with constant advent of new technology, newfound advances and innovations have begun to offer solutions.
 
 This project utilizes the Google and Postmates APIs in conjunction to provide stores an easy manner in which food and other goods can be given to those in need. 
 
