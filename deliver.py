@@ -8,11 +8,26 @@ import sys
 
 init()
 
-def main(API_KEY, CUSTOMER_ID):
+def delivers(name, number, description):
+
+    try:
+        os.environ["POSTMATES_KEY"] = "REDACTED" #TAKE OUT
+        API_KEY = os.environ["POSTMATES_KEY"]
+    except KeyError:
+        print(Fore.RED + "Please set the Postmates API Key to the environment variable POSTMATES_KEY" + Fore.RESET)
+        sys.exit(1)
+
+    try:
+        os.environ["POSTMATES_ID"] = "REDACTED" #TAKE OUT
+        CUSTOMER_ID = os.environ["POSTMATES_ID"]
+    except KeyError:
+        print(Fore.RED + "Please set the Postmates Customer ID environment variable POSTMATES_ID" + Fore.RESET)
+        sys.exit(1)
+
 
     postmate = pm.PostmatesAPI(API_KEY, CUSTOMER_ID)
 
-    delivery = order(postmate)
+    delivery = order(postmate, name, number, description)
 
     interact = True
 
@@ -50,7 +65,7 @@ def get_status(delivery):
     else:
         print "Something is wrong PLS FIX STATUS"
 
-def order(postmate):
+def order(postmate, name, number, manifest):
 
     #pickup =  Get the location from Saketh's part.
     pickup = "77 Massachusetts Ave, Cambridge, MA 02139"
@@ -59,9 +74,9 @@ def order(postmate):
     end = ["Bob", "Massachusetts Hall Cambridge, MA 02138", "415-777-9999"]    
 
     # This info should come in via parameters from the form on the website
-    name = raw_input("Please enter your company's name: ")
-    number = raw_input("Please enter your Phone number (i.e. 123-456-7890): ")
-    manifest = raw_input("Please enter what you will be i (i.e. 50 bagels): ")
+    #name = raw_input("Please enter your company's name: ")
+    #number = raw_input("Please enter your Phone number (i.e. 123-456-7890): ")
+    #manifest = raw_input("Please enter what you will be i (i.e. 50 bagels): ")
 
     pickup = pm.Location(name, pickup, number)
 
@@ -71,23 +86,3 @@ def order(postmate):
     delivery.create()
 
     return delivery
-
-
-if __name__ == '__main__':
-
-    try:
-        os.environ["POSTMATES_KEY"] = "REDACTED" #TAKE OUT
-        API_KEY = os.environ["POSTMATES_KEY"]
-    except KeyError:
-        print(Fore.RED + "Please set the Postmates API Key to the environment variable POSTMATES_KEY" + Fore.RESET)
-        sys.exit(1)
-
-    try:
-        os.environ["POSTMATES_ID"] = "REDACTED" #TAKE OUT
-        CUSTOMER_ID = os.environ["POSTMATES_ID"]
-    except KeyError:
-        print(Fore.RED + "Please set the Postmates Customer ID environment variable POSTMATES_ID" + Fore.RESET)
-        sys.exit(1)
-
-    main(API_KEY, CUSTOMER_ID)
-    #main(API_KEY, CUSTOMER_ID, sys.argv[1], sys.argv[2]) # argv[1] is name, argv[2] is phone number
