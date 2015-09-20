@@ -9,31 +9,37 @@ import sys
 init()
 
 def delivers(name, number, description):
-
+    """
     try:
-        os.environ["POSTMATES_KEY"] = "REDACTED" #TAKE OUT
+        os.environ["POSTMATES_KEY"] = "a254dd7a-a9ba-4e30-9adf-7e72781caba3" #TAKE OUT
         API_KEY = os.environ["POSTMATES_KEY"]
     except KeyError:
         print(Fore.RED + "Please set the Postmates API Key to the environment variable POSTMATES_KEY" + Fore.RESET)
         sys.exit(1)
 
     try:
-        os.environ["POSTMATES_ID"] = "REDACTED" #TAKE OUT
+        os.environ["POSTMATES_ID"] = "cus_KUqGApvB2kLJsF" #TAKE OUT
         CUSTOMER_ID = os.environ["POSTMATES_ID"]
     except KeyError:
         print(Fore.RED + "Please set the Postmates Customer ID environment variable POSTMATES_ID" + Fore.RESET)
         sys.exit(1)
+    """
 
+    postmate = pm.PostmatesAPI("a254dd7a-a9ba-4e30-9adf-7e72781caba3", "cus_KUqGApvB2kLJsF")
 
-    postmate = pm.PostmatesAPI(API_KEY, CUSTOMER_ID)
+    print str(postmate)
 
     delivery = order(postmate, name, number, description)
 
     interact = True
 
+    print "hello"
+
     while(interact):
 
-        command = raw_input("Status, Cancel, Done: ")
+        #command = raw_input("Status, Cancel, Done: ")
+        print "hi"
+        command = "Done"
 
         if(command == "Status"): #check what button the user presses
             delivery.update_status()
@@ -48,6 +54,7 @@ def delivers(name, number, description):
             interact = False
 
         elif(command == "Done"):
+            print "test"
             interact = False
 
         else:
@@ -83,6 +90,7 @@ def order(postmate, name, number, manifest):
     dropoff = pm.Location(end[0], end[1], end[2])
 
     delivery = pm.Delivery(postmate, manifest, pickup, dropoff)
+    
     delivery.create()
 
     return delivery

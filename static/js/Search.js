@@ -88,8 +88,10 @@ function Map_create() {
 } //Map_create() end!
 $(function () {
     $("#placeOrder").click(function(){
-        debugger;
-        $("form").append("<input type='hidden' value='testing'>");
+        $("form").append("<input type='hidden' name='test' value='testing'>");
+        $("form").append("<input type='hidden' name='test' value='testing'>");
+        $("form").append("<input type='hidden' name='test' value='testing'>");
+        $("form").append("<input type='hidden' name='test' value='testing'>");
     });
 });
 
