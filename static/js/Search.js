@@ -2,7 +2,6 @@ function Map_create() {
     //Creating new google.maps.Map object (google.maps.Map(mapDiv, options))
     var deliver;
     var data;
-
     var abc = new google.maps.LatLng(20.68177501, -103.3514794);
 
     var mapOptions = {
@@ -84,6 +83,7 @@ function Map_create() {
                     data.open(map,marker);
                     $("#outputname").text(result.name);
                     $("#outputaddress").text(result.formatted_address);
+
               });
             });
          }
@@ -94,9 +94,26 @@ function Map_create() {
 
 
 } //Map_create() end!
+/* ~~~~~~~~~ API ~~~~~~~~~~~~~~ */
+function delivery () {
+    $.ajax({
+        url: "https://api.postmates.com/v1/customers/cus_KUqGApvB2kLJsF/delivery_quotes",
+        headers: {
+            "Authorization" : "Basic a254dd7a-a9ba-4e30-9adf-7e72781caba3"
+        },
+        success: test
+    });
+}
 
+function test (data) {
+    alert("reached");
+}
 
-
-
+$(function () {
+    $("#placeOrder").click(function(){
+        debugger;
+        $("form").append("<input type='hidden' value='testing'>");
+    });
+});
 
            
