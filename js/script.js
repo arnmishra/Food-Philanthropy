@@ -13,26 +13,24 @@
 		if (navigator.geolocation) {
 			//"returns" a Position object, which has a Coordinates object within it
 			navigator.geolocation.getCurrentPosition(function(position) {
-				var pos = {
-					lat: position.coords.latitude,
-					lon: position.coords.longitude
-				};
+      			var pos = {
+        			lat: position.coords.latitude,
+        			lng: position.coords.longitude
+      			};
 
-				locationBlock.setPosition(pos);
-				locationBlock.setContent("You are here!");
-
-				map.setCenter(pos);
-				return pos;
-			}, function() {
-				errorHappened(true, locationBlock, map.getCenter());
-			});
-		}
-		else {
-			errorHappened(false, locationBlock, map.getCenter());
-		}
+      		locationBlock.setPosition(pos);
+      		locationBlock.setContent('You are Here!.');
+      		map.setCenter(pos);
+    	}, function() {
+      		handleLocationError(true, infoWindow, map.getCenter());
+    	});
+  		} else {
+    	// Browser doesn't support Geolocation
+   			 handleLocationError(false, infoWindow, map.getCenter());
+  		}
 	}	
 
-	function errorHappened(allowedGeolocation, marker, position) {
+	function handleLocationError(allowedGeolocation, marker, position) {
 		marker.setPosition(position);
 		if (allowedGeolocation) {
 			marker.setContent("Browser didn't allow access to geolocation.");
