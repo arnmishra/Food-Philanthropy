@@ -11,14 +11,27 @@ body, html {
 	color: black;
 /*	margin-right: 325px;*/
 }
-
+#output {
+	width: 400px;
+	height: 100px;
+	float: right;
+}
+.ourservices {
+	margin-bottom: 20px;
+}
+.about{
+	padding-bottom: 25px;
+	padding-top: 0px;
+}
 .rand
 {
 	width: 45%;
 	height: 350px;
 	margin: 0 auto;
 }
-
+footer {
+	padding: 40px 0;
+}
 /*h3.rand
 {
 	margin-left:60%;
