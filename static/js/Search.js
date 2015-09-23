@@ -29,9 +29,11 @@ function Map_create() {
             map.setCenter(pos);
 
 /* ~~~~~~~~~~~~~~~~~  ON CLICK OF BUTTON ~~~~~~~~~~~~~~~~~~~~~~~~ */
-            
+            $("#search").click(function(){
                 deliver = new google.maps.places.PlacesService(map);
                 map.addListener('idle', performSearch);
+            });
+                
                 
         });//getCurrentPosition
 
@@ -40,7 +42,7 @@ function Map_create() {
         function performSearch() {
             var request = {
                 bounds: map.getBounds(),
-                keyword: 'food pantry'
+                keyword: $("#description").val(),
             }
             deliver.radarSearch(request, callback);
         }
