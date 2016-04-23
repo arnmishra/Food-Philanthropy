@@ -41,7 +41,7 @@ def delivers(company_name, phone, description, start_address, end_address, end_n
     fixed_file.write("Delivery name: " + end_name)
     fixed_file.close()
 
-    '''
+    
     interact = True
 
     while(interact):
@@ -66,8 +66,8 @@ def delivers(company_name, phone, description, start_address, end_address, end_n
             interact = False
 
         else:
-            print "Ya dun messed up. Put in a real command pls."
-    '''
+            print "lol great"
+    
     fix_file(delivery)
 
 def get_status(delivery):
@@ -80,7 +80,7 @@ def get_status(delivery):
     elif(delivery.status == "delivered"):
         print "Delivery is complete."
     else:
-        print "Something is wrong PLS FIX STATUS"
+        print "Error occured."
 
 def order(postmate, name, number, manifest, start_address, end_address, end_name):
 
