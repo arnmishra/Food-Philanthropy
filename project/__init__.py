@@ -1,27 +1,4 @@
-""" App to host Google Maps of Location and Nearby Pantries.
-
-Week 0 Requirements:
-1. App Renders correctly with current locations
-2. Nearby Pantries are displayed
-3. Postmates quotes are returned correctly
-
-Week 1 Requirements:
-1. Uber API Interactions
-2. Asynchronous submission form linked with Uber + Postmates
-3. Develop Google Maps Routing
-
-Week 2 Requirements:
-1. SQL Alchemy integrations for authentication
-2. SQL Models for Routing
-3. Registration
-4. Login/Logout
-
-Week 3 Requirements:
-1. Cumulative Stats
-2. Past Order Paths
-3. Auto-Fill User Info
-4. Routes Model
-"""
+""" App to host Google Maps of Location and Nearby Pantries."""
 
 from flask import Flask
 from flask_googlemaps import GoogleMaps
