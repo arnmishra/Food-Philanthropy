@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quotes</title>
+    {{map.js}}
+    <style>
+		.logoutButton{
+		   position:fixed;
+		   right:10px;
+		   top:5px;
+		}
+	</style>
+</head>
+    <body>
+        <h1>Quotes for Donation</h1>
+
+        <form align="right" action="/logout">
+            <label class="logoutButton">
+                <input name="submit" type="submit" id="submit" value="Log Out">
+            </label>
+        </form>
+
+        {{map.html}}
+
+        <h2>Postmates Delivery Quote:</h2>
+        <p>ID: {{ postmates_quote["quote_id"] }}</p>
+        <p>Created At: {{ postmates_quote["created"] }}</p>
+        <p>Fee: ${{ postmates_quote["fee"]/100.0 }} {{ postmates_quote["currency"] }}</p>
+        <p>Dropoff ETA: {{ postmates_quote["dropoff_eta"] }}</p>
+        <p>Expires: {{ postmates_quote["expires"] }}</p>
+
+        <h2>Uber Delivery Quote:</h2>
+        <p>ID: {{ uber_quote["quote_id"] }}</p>
+        <p>Created At: {{ uber_quote["estimated_at"] }}</p>
+        <p>Fee: ${{ uber_quote["fee"] }} {{ uber_quote["currency_code"] }}</p>
+        <p>Dropoff ETA: {{ uber_quote["dropoff_eta"] }} minutes</p>
+        <p>Expires: {{ uber_quote["expires_at"] }}</p>
+    </body>
+</html>

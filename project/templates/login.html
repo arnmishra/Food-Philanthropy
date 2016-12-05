@@ -1,0 +1,23 @@
+<!-- https://dcrazed.com/css-html-login-form-templates/ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="static/css/login.css" rel="stylesheet">
+</head>
+<body>
+    <form id="login" action="/login" method="POST">
+        <header>Login To Food Philanthropy</header>
+        <div class="help">{{ error }}</div>
+        <label>Username <span>*</span></label>
+        <input id="username" name="username" type="text" placeholder="Username">
+        <div class="help">At least 6 character</div>
+        <label>Password <span>*</span></label>
+        <input id="password" name="password" type="password" placeholder="Password">
+        <div class="help">Use upper and lowercase letters as well</div>
+        <button>Login</button>
+    </form>
+
+</body>
+</html>

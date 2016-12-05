@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link href="static/css/login.css" rel="stylesheet">
+</head>
+<body>
+    <form action="/sign_up" method="POST">
+        <header>Register For Food Philanthropy</header>
+        <div class="help">{{ error }}</div>
+
+        <label>Username <span>*</span></label>
+        <input id="username" name="username" type="text" placeholder="Username">
+        <div class="help">At least 6 character</div>
+
+        <label>Password <span>*</span></label>
+        <input id="password" name="password" type="password" placeholder="Password">
+        <div class="help">Use upper and lowercase letters as well</div>
+
+        <label>Name </label>
+        <input id="name" type="text" name="name" placeholder="Name">
+
+        <label>Street Address </label>
+        <input id="street_address" type="text" name="street_address" placeholder="Street Address">
+
+        <label>City </label>
+        <input id="city" type="text" name="city" placeholder="City">
+
+        <label>State </label>
+        <input id="state" type="text" name="state" placeholder="State">
+
+        <label>Zip Code </label>
+        <input id="zip_code" type="text" name="zip_code" placeholder="Zip Code">
+
+        <label>Country </label>
+        <input id="country" type="text" name="country" placeholder="Country">
+
+        <label>Phone Number </label>
+        <input id="number" type=text" name="number" placeholder="Phone Number">
+
+        <button>Register</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<html lang="en">
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Food Philanthropy</title>
+		{{map.js}}
+	</head>
+	<style>
+		.logoutButton{
+		   position:fixed;
+		   right:10px;
+		   top:5px;
+		}
+	</style>
+<body>
+	<h1>Food Philanthropy</h1>
+
+	<form align="right" action="/logout">
+		<label class="logoutButton">
+			<input name="submit" type="submit" id="submit" value="Log Out">
+		</label>
+	</form>
+	<h2>Nearby Food Pantries and Donation Centers</h2>
+	{{map.html}}
+	<a href="/past_orders">Click here</a> for past orders.
+	<h2 style="margin-left: 150px;">Submit Request:</h2>
+	<form action="/show_quotes", method="POST">
+		<div style="float: left; width: 30%;">
+			<h3>Pickup Data:</h3>
+			Your Name: <input type="destination" name="start" value="{{ current_user.name }}"><br />
+			Street: <input type="text" name="start_street" value="{{ current_user.street_address }}"><br />
+			City: <input type="text" name="start_city" value="{{ current_user.city }}"><br />
+			State: <input type="text" name="start_state" value="{{ current_user.state }}"><br />
+			Zip Code: <input type="text" name="start_zip_code" value="{{ current_user.zip_code }}"><br />
+			Country: <input type="text" name="start_country" value="{{ current_user.country }}"><br />
+			Phone Number: <input type="text" name="start_number" value="{{ current_user.phone_number }}"><br />
+		</div>
+		<div style="float: right; width: 70%;">
+			<h3>Drop-off Data:</h3>
+			Name of Donation Center: <input type="text" id="destination" name="destination"><br />
+			Street: <input type="text" name="destination_street" id = "destination_street"><br />
+			City: <input type="text" name="destination_city" id="destination_city"><br />
+			State: <input type="text" name="destination_state" id="destination_state"><br />
+			Zip Code: <input type="text" name="destination_zip_code" id="destination_zip_code"><br />
+			Country: <input type="text" name="destination_country" id="destination_country"><br />
+			<input type="hidden" name="destination_number" value="1"><br />
+		</div>
+		<input type="submit" name="Get Quote">
+	</form>
+</body>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		$("#destination").bind("change", function(e){
+			$.ajax({
+			    type: 'POST',
+				url: "/get_data",
+				data: { destination: $("#destination").val() },
+				success: function(data){
+					$("#destination_street").val(data.street);
+					$("#destination_city").val(data.city);
+					$("#destination_state").val(data.state);
+					$("#destination_zip_code").val(data.zip_code);
+					$("#destination_country").val(data.country);
+				}
+			});
+		});
+   </script>
+</html>
